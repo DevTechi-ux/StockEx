@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { WalletProvider } from './contexts/WalletContext';
 import { SidebarProvider } from './contexts/SidebarContext';
+import UserLayout from './layouts/UserLayout';
 import AdminLayout from './layouts/AdminLayout';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
@@ -36,16 +37,16 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               
-              {/* User routes */}
-              <Route path="/" element={<Login />}>
-                <Route index element={<Navigate to="/dashboard" replace />} />
+              {/* User Panel Routes */}
+              <Route path="/" element={<UserLayout />}>
+                <Route index element={<Navigate to="/dashboard" replace />} /> 
                 <Route path="dashboard" element={<div>User Dashboard</div>} />
                 <Route path="trading" element={<Trading />} />
                 <Route path="wallet" element={<Wallet />} />
                 <Route path="settings" element={<div>User Settings</div>} />
               </Route>
 
-              {/* Admin routes */}
+              {/* Admin Panel routes */}
               <Route path="/admin" element={<AdminLayout />}>
                 <Route index element={<Dashboard />} />
                 <Route path="manage-transactions" element={<ManageTransactions />} />
