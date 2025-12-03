@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { LogOut, User, Menu } from "lucide-react";
+import { LogOut, User, Menu, Clock } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSidebar } from "../../contexts/SidebarContext";
 
@@ -8,6 +8,22 @@ const Navbar: React.FC = () => {
   const { user, logout } = useAuth();
   const { toggleCollapsed } = useSidebar();
   const navigate = useNavigate();
+  const [currentTime, setCurrentTime] = useState<string>("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+      setCurrentTime(`${hours}:${minutes}:${seconds}`);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleLogout = () => {
     logout();
@@ -36,6 +52,13 @@ const Navbar: React.FC = () => {
 
           {/* Right Section */}
           <div className="flex items-center gap-5">
+            {user?.role === "admin" && (
+              <div className="flex items-center gap-2 text-gray-700">
+                <Clock className="w-5 h-5" />
+                <span className="font-mono font-semibold text-lg">{currentTime}</span>
+              </div>
+            )}
+            
             <div className="flex items-center gap-2 text-gray-700">
               <User className="w-5 h-5" />
               <span>{user?.name}</span>

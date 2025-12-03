@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -10,6 +10,19 @@ import {
   History,
   ChevronDown,
   Shield,
+  TrendingUp,
+  DollarSign,
+  CreditCard,
+  BarChart3,
+  Activity,
+  FileText,
+  Download,
+  HandCoins,
+  Bell,
+  KeyRound,
+  Ban,
+  AlertTriangle,
+  UserCog,
 } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSidebar } from "../../contexts/SidebarContext";
@@ -17,8 +30,35 @@ import { useSidebar } from "../../contexts/SidebarContext";
 const Sidebar: React.FC = () => {
   const { user } = useAuth();
   const location = useLocation();
-  const { isCollapsed } = useSidebar();
+  const { isCollapsed, setIsCollapsed } = useSidebar();
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
+
+  const systemAdminSubLinks = [
+    { to: "/admin/manage-risk", icon: AlertTriangle, label: "Manage Risk" },
+    { to: "/admin/manage-roles", icon: UserCog, label: "Manage Roles" },
+    { to: "/admin/manage-users", icon: Shield, label: "Manage Users" },
+  ];
+
+  // Check if current location matches any system admin sub-link
+  const isSystemAdminActive = systemAdminSubLinks.some(
+    (link) => location.pathname === link.to
+  );
+
+  // Auto-expand System Admin menu if on a system admin sub-link
+  useEffect(() => {
+    if (isSystemAdminActive) {
+      setExpandedMenu("systemAdmin");
+    } else {
+      // Only collapse if we're not on a system admin route
+      setExpandedMenu(null);
+    }
+  }, [location.pathname, isSystemAdminActive]);
+
+  const handleLinkClick = () => {
+    if (!isCollapsed) {
+      setIsCollapsed(true);
+    }
+  };
 
   const userLinks = [
     { to: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
@@ -30,25 +70,19 @@ const Sidebar: React.FC = () => {
   const adminLinks = [
     { to: "/admin", icon: LayoutDashboard, label: "Dashboard" },
     { to: "/admin/manage-transactions", icon: CircleDollarSign, label: "Manage Transactions" },
-    { to: "/admin/fundrequest", icon: Users, label: "Fund Requests" },
-    { to: "/admin/fund", icon: History, label: "Fund" },
-    { to: "/admin/nifty-updown-prediction", icon: Settings, label: "Nifty Up/Down Prediction" },
-    { to: "/admin/nifty-updown", icon: LayoutDashboard, label: "Nifty Up/Down Admin" },
-    { to: "/admin/trade", icon: Users, label: "Trade" },
-    { to: "/admin/transaction-report", icon: CircleDollarSign, label: "Transaction Report" },
-    { to: "/admin/subscription-pin", icon: History, label: "Subscription Pin" },
+    { to: "/admin/fundrequest", icon: CreditCard, label: "Fund Requests" },
+    { to: "/admin/fund", icon: DollarSign, label: "Fund" },
+    { to: "/admin/nifty-updown-prediction", icon: TrendingUp, label: "Nifty Up/Down Prediction" },
+    { to: "/admin/nifty-updown", icon: BarChart3, label: "Nifty Up/Down Admin" },
+    { to: "/admin/trade", icon: Activity, label: "Trade" },
+    { to: "/admin/transaction-report", icon: FileText, label: "Transaction Report" },
+    { to: "/admin/subscription-pin", icon: HandCoins, label: "Subscription Pin" },
     { to: "/admin/balance", icon: History, label: "Legder Balance" },
-    { to: "/admin/banscript", icon: Settings, label: "BanScript" },
-    { to: "/admin/download-report", icon: Settings, label: "Download Report" },
-    { to: "/admin/manual-active-trade", icon: Settings, label: "Manual Active Trade" },
-    { to: "/admin/notification", icon: Settings, label: "Notification" },
-    { to: "/admin/change-password", icon: Settings, label: "Change Password" },
-  ];
-
-  const systemAdminSubLinks = [
-    { to: "/admin/manage-risk", icon: Settings, label: "Manage Risk" },
-    { to: "/admin/manage-roles", icon: Users, label: "Manage Roles" },
-    { to: "/admin/manage-users", icon: Shield, label: "Manage Users" },
+    { to: "/admin/banscript", icon: Ban, label: "BanScript" },
+    { to: "/admin/download-report", icon: Download, label: "Download Report" },
+    { to: "/admin/manual-active-trade", icon: LineChart, label: "Manual Active Trade" },
+    { to: "/admin/notification", icon: Bell, label: "Notification" },
+    { to: "/admin/change-password", icon: KeyRound, label: "Change Password" },
   ];
 
   const links = user?.role === "admin" ? adminLinks : userLinks;
@@ -67,6 +101,7 @@ const Sidebar: React.FC = () => {
               <React.Fragment key={to}>
                 <Link
                   to={to}
+                  onClick={handleLinkClick}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all ${
                     active
                       ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md"
@@ -82,14 +117,21 @@ const Sidebar: React.FC = () => {
                 {user?.role === "admin" && label === "Trade" && (
                   <div className="mt-2">
                     <button
-                      onClick={() => setExpandedMenu(expandedMenu === "systemAdmin" ? null : "systemAdmin")}
+                      onClick={() => {
+                        // If sidebar is collapsed, expand it first
+                        if (isCollapsed) {
+                          setIsCollapsed(false);
+                        }
+                        // Toggle the System Admin menu
+                        setExpandedMenu(expandedMenu === "systemAdmin" ? null : "systemAdmin");
+                      }}
                       className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all ${
-                        expandedMenu === "systemAdmin"
+                        expandedMenu === "systemAdmin" || isSystemAdminActive
                           ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md"
                           : "text-gray-700 hover:bg-gray-300"
                       }`}
                     >
-                      <Shield className={`w-5 h-5 flex-shrink-0 ${expandedMenu === "systemAdmin" ? "text-white" : "text-gray-700"}`} />
+                      <Shield className={`w-5 h-5 flex-shrink-0 ${expandedMenu === "systemAdmin" || isSystemAdminActive ? "text-white" : "text-gray-700"}`} />
                       {!isCollapsed && (
                         <>
                           <span>System Admin</span>
@@ -110,6 +152,7 @@ const Sidebar: React.FC = () => {
                             <Link
                               key={to}
                               to={to}
+                              onClick={handleLinkClick}
                               className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
                                 active
                                   ? "bg-blue-100 text-blue-600"
