@@ -1,0 +1,2 @@
+# StockEx
+Trading platform
