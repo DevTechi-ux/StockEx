@@ -34,28 +34,28 @@ const ActiveTrades: React.FC = () => {
 
                     <div className="w-full overflow-x-auto">
                         <div className="inline-block min-w-full align-middle">
-                            <table className="min-w-max w-full border-collapse">
+                            <table className="min-w-full w-full border-collapse">
                                 <thead>
                                     <tr className="bg-blue-600 text-white">
                                         <th className="px-4 py-3 text-left font-semibold">Square Off</th>
                                         <th className="px-4 py-3 text-left font-semibold">Action</th>
                                         <th className="px-4 py-3 text-left font-semibold">Trade Symbol</th>
                                         <th className="px-4 py-3 text-left font-semibold">Lot/Qty</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Unit</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Unit</th>
                                         <th className="px-4 py-3 text-left font-semibold">Current Position</th>
                                         <th className="px-4 py-3 text-left font-semibold">Order Price</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Trigger Price</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Trigger Price</th>
                                         <th className="px-4 py-3 text-left font-semibold">LTP</th>
                                         <th className="px-4 py-3 text-left font-semibold">Profit/Loss</th>
                                         <th className="px-4 py-3 text-left font-semibold">Status</th>
-                                        <th className="px-4 py-3 text-left font-semibold">SL</th>
-                                        <th className="px-4 py-3 text-left font-semibold">TGT</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Order Date</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Order Time</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Product Type</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Strategy Name</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Publish Name</th>
-                                        <th className="px-4 py-3 text-left font-semibold">Fund Manager</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">SL</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">TGT</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Order Date</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Order Time</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Product Type</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Strategy Name</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Publish Name</th>
+                                        <th className="hidden md:table-cell px-4 py-3 text-left font-semibold">Fund Manager</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,21 +76,21 @@ const ActiveTrades: React.FC = () => {
                                                 </td>
                                                 <td className="px-4 py-3">{trade.symbol}</td>
                                                 <td className="px-4 py-3">{trade.quantity}</td>
-                                                <td className="px-4 py-3">{trade.unit}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.unit}</td>
                                                 <td className="px-4 py-3">{trade.position}</td>
                                                 <td className="px-4 py-3">{trade.orderPrice}</td>
-                                                <td className="px-4 py-3">{trade.triggerPrice}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.triggerPrice}</td>
                                                 <td className="px-4 py-3">{trade.ltp}</td>
                                                 <td className="px-4 py-3">{trade.profitLoss}</td>
                                                 <td className="px-4 py-3">{trade.status}</td>
-                                                <td className="px-4 py-3">{trade.sl}</td>
-                                                <td className="px-4 py-3">{trade.tgt}</td>
-                                                <td className="px-4 py-3">{trade.orderDate}</td>
-                                                <td className="px-4 py-3">{trade.orderTime}</td>
-                                                <td className="px-4 py-3">{trade.productType}</td>
-                                                <td className="px-4 py-3">{trade.strategyName}</td>
-                                                <td className="px-4 py-3">{trade.publishName}</td>
-                                                <td className="px-4 py-3">{trade.fundManager}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.sl}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.tgt}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.orderDate}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.orderTime}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.productType}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.strategyName}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.publishName}</td>
+                                                <td className="hidden md:table-cell px-4 py-3">{trade.fundManager}</td>
                                             </tr>
                                         ))
                                     )}

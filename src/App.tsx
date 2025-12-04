@@ -17,7 +17,7 @@ import ManageRisk from './pages/Admin/ManageRisk';
 import ManageRoles from './pages/Admin/ManageRoles';
 import ManageUsers from './pages/Admin/ManageUser';
 import TransactionReport from './pages/Admin/TransactionReport';
-import SubscriptionPin from './pages/Admin/SubscriptionPin';
+// import SubscriptionPin from './pages/Admin/SubscriptionPin';
 import LedgerBalance from './pages/Admin/LegderBalanace';
 import DownloadReport from './pages/Admin/DownloadReport';
 import ManualActiveTrade from './pages/Admin/ManualActiveTrade';
@@ -70,7 +70,7 @@ function App() {
                 <Route path="manage-roles" element={<ManageRoles />} />
                 <Route path="manage-users" element={<ManageUsers />} />
                 <Route path="transaction-report" element={<TransactionReport />} />
-                <Route path="subscription-pin" element={<SubscriptionPin />} />
+                {/* <Route path="subscription-pin" element={<SubscriptionPin />} /> */}
                 <Route path="balance" element={<LedgerBalance />} />
                 <Route path="download-report" element={<DownloadReport />} />
                 <Route path="manual-active-trade" element={<ManualActiveTrade />} />

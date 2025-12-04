@@ -46,9 +46,9 @@ return (
                                 <th className="px-4 py-3 text-left">ID</th>
                                 <th className="px-4 py-3 text-left">Type</th>
                                 <th className="px-4 py-3 text-left">Amount</th>
-                                <th className="px-4 py-3 text-left">Price</th>
+                                <th className="hidden md:table-cell px-4 py-3 text-left">Price</th>
                                 <th className="px-4 py-3 text-left">Status</th>
-                                <th className="px-4 py-3 text-left">Time</th>
+                                <th className="hidden md:table-cell px-4 py-3 text-left">Time</th>
                                 <th className="px-4 py-3 text-left">Action</th>
                             </tr>
                         </thead>
@@ -65,13 +65,13 @@ return (
                                         <td className="px-4 py-3">{trade.id.slice(-6)}</td>
                                         <td className="px-4 py-3 font-semibold text-blue-600">{trade.type}</td>
                                         <td className="px-4 py-3">₹{trade.amount}</td>
-                                        <td className="px-4 py-3">₹{trade.price}</td>
+                                        <td className="hidden md:table-cell px-4 py-3">₹{trade.price}</td>
                                         <td className="px-4 py-3">
                                             <span className="px-3 py-1 bg-green-100 text-green-700 rounded text-sm font-semibold">
                                                 {trade.status}
                                             </span>
                                         </td>
-                                        <td className="px-4 py-3">{trade.time}</td>
+                                        <td className="hidden md:table-cell px-4 py-3">{trade.time}</td>
                                         <td className="px-4 py-3">
                                             <button className="px-3 py-1 bg-red-500 text-white rounded text-sm hover:bg-red-600">
                                                 Close
