@@ -61,10 +61,18 @@ const Sidebar: React.FC = () => {
   };
 
   const userLinks = [
-    { to: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
-    { to: "/trading", icon: LineChart, label: "Trading" },
-    { to: "/wallet", icon: Wallet, label: "Wallet" },
-    { to: "/settings", icon: Settings, label: "Settings" },
+    { to: "/trade", icon: Activity, label: "Trade" },
+    { to: "/fund", icon: DollarSign, label: "Fund" },
+    { to: "/nifty-updown-prediction", icon: TrendingUp, label: "Nifty Up/Down Prediction" },
+    { to: "/transaction-report", icon: FileText, label: "Transaction Report" },
+    { to: "/balance", icon: History, label: "Ledger Balance" },
+    { to: "/download-report", icon: Download, label: "Download Report" },
+    { to: "/notification", icon: Bell, label: "Notification" },
+    { to: "/change-password", icon: KeyRound, label: "Change Password" },
+
+    
+
+  
   ];
 
   const adminLinks = [
@@ -77,7 +85,7 @@ const Sidebar: React.FC = () => {
     { to: "/admin/trade", icon: Activity, label: "Trade" },
     { to: "/admin/transaction-report", icon: FileText, label: "Transaction Report" },
     { to: "/admin/subscription-pin", icon: HandCoins, label: "Subscription Pin" },
-    { to: "/admin/balance", icon: History, label: "Legder Balance" },
+    { to: "/admin/balance", icon: History, label: "Ledger Balance" },
     { to: "/admin/banscript", icon: Ban, label: "BanScript" },
     { to: "/admin/download-report", icon: Download, label: "Download Report" },
     { to: "/admin/manual-active-trade", icon: LineChart, label: "Manual Active Trade" },

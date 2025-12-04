@@ -20,9 +20,12 @@ const UserLayout: React.FC = () => {
       <Navbar />
       <div className="flex">
         <Sidebar />
-        <main className="flex-1">
-          <Outlet />
-        </main>
+        
+                <main className="flex-1 p-6">
+                  <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6 min-h-[80vh] ">
+                    <Outlet />
+                  </div>
+                </main>
       </div>
     </div>
   );

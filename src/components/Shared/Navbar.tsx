@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
 
           {/* Right Section */}
           <div className="flex items-center gap-5">
-            {user?.role === "admin" && (
+            {(user?.role === "admin" || user?.role === "user") && (
               <div className="flex items-center gap-2 text-gray-700">
                 <Clock className="w-5 h-5" />
                 <span className="font-mono font-semibold text-lg">{currentTime}</span>

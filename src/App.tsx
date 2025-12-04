@@ -1,13 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
-import { WalletProvider } from './contexts/WalletContext';
+// import { WalletProvider } from './contexts/WalletContext';
 import { SidebarProvider } from './contexts/SidebarContext';
 import UserLayout from './layouts/UserLayout';
 import AdminLayout from './layouts/AdminLayout';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
-import Trading from './pages/User/Trading';
-import Wallet from './pages/User/Wallet';
 import ManageTransactions from './pages/Admin/Manage-transaction';
 import Dashboard from './pages/Admin/Dashboard';
 import FundRequest from './pages/Admin/FundRequest';
@@ -26,11 +24,20 @@ import ManualActiveTrade from './pages/Admin/ManualActiveTrade';
 import Notification from './pages/Admin/Notification';
 import ChangePasswords from './pages/Admin/ChangePasswords';
 import BanScript from './pages/Admin/BanScript';
+import UserTrade from './pages/User/UserTrade';
+import UserFund from './pages/User/UserFund';
+import UserNiftyUpDowsPrediction from './pages/User/UserNIftyUpDownPrediction';
+import UserTransactionReport from './pages/User/UserTransactionReport';
+import UserLedgerBalance from './pages/User/LedgerBalance';
+import UserDownloadReport from './pages/User/UserDownloadReport';
+import UserNotification from './pages/User/UserNotifications';
+import UserChangePassword from './pages/User/ChangePassword';
+
 
 function App() {
   return (
     <AuthProvider>
-      <WalletProvider>
+      {/* <WalletProvider> */}
         <SidebarProvider>
           <BrowserRouter>
             <Routes>
@@ -39,11 +46,15 @@ function App() {
               
               {/* User Panel Routes */}
               <Route path="/" element={<UserLayout />}>
-                <Route index element={<Navigate to="/dashboard" replace />} /> 
-                <Route path="dashboard" element={<div>User Dashboard</div>} />
-                <Route path="trading" element={<Trading />} />
-                <Route path="wallet" element={<Wallet />} />
-                <Route path="settings" element={<div>User Settings</div>} />
+                <Route index element={<Navigate to="/trade" replace />} /> 
+                <Route path="trade" element={<UserTrade />} />
+                <Route path="fund" element={<UserFund />} />
+                <Route path="nifty-updown-prediction" element={<UserNiftyUpDowsPrediction />} />
+                <Route path="transaction-report" element={<UserTransactionReport />} />
+                <Route path="balance" element={<UserLedgerBalance />} />
+                <Route path="download-report" element={<UserDownloadReport />} />
+                <Route path="notification" element={<UserNotification />} />
+                <Route path="change-password" element={<UserChangePassword />} />
               </Route>
 
               {/* Admin Panel routes */}
@@ -72,7 +83,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </SidebarProvider>
-      </WalletProvider>
+      {/* </WalletProvider> */}
     </AuthProvider>
   );
 }

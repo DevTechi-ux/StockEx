@@ -12,7 +12,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      navigate(email.includes('admin') ? '/admin' : '/dashboard');
+      navigate(email.includes('admin') ? '/admin' : '/trade');
     } catch (error) {
       console.error('Login failed:', error);
     }
