@@ -8,9 +8,9 @@ export default function ManageRisk() {
     const [showFilterModal, setShowFilterModal] = useState(false);
 
     return (
-        <div className="w-full bg-slate-100">
+        <div className="w-full ">
       <div className="max-w-6xl mx-auto py-4 overflow-x-hidden">
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8  min-h-screen">
             {/* Is Active Checkbox and Filter Button */}
             <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
@@ -62,7 +62,7 @@ export default function ManageRisk() {
             </div>
 
             {/* Table */}
-            <div className="w-full bg-white rounded overflow-x-auto mb-6">
+            <div className="w-full  rounded overflow-x-auto mb-6">
                 <div className="inline-block min-w-full align-middle">
                 <table className="min-w-max w-full border-collapse">
                     <thead>

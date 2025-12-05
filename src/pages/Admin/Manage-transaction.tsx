@@ -3,9 +3,9 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import StatsCards from "../../components/Admin/Dashboard/Stack-card";
-import ActiveTradesTable from "../../components/Admin/ManageTransaction'/active-trade";
-import SymbolTable from "../../components/Admin/ManageTransaction'/symbol-table";
-import TransactionFilters from "../../components/Admin/ManageTransaction'/filters";
+import ActiveTradesTable from "../../components/Admin/ManageTransaction/active-trade";
+import SymbolTable from "../../components/Admin/ManageTransaction/symbol-table";
+import TransactionFilters from "../../components/Admin/ManageTransaction/filters";
 
 export function ManageTransactions() {
   const location = useLocation();

@@ -40,7 +40,7 @@ export default function LedgerBalance() {
     };
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8  min-h-screen">
             {/* Checkbox */}
             <div className="mb-6">
                 <label className="flex items-center gap-2 cursor-pointer">
@@ -79,7 +79,7 @@ export default function LedgerBalance() {
             </div>
 
             {/* Table */}
-            <div className="bg-white rounded overflow-x-auto mb-6">
+            <div className="     rounded overflow-x-auto mb-6">
                 <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-blue-600 text-white">

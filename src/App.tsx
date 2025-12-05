@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
-// import { WalletProvider } from './contexts/WalletContext';
 import { SidebarProvider } from './contexts/SidebarContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import UserLayout from './layouts/UserLayout';
 import AdminLayout from './layouts/AdminLayout';
 import Login from './pages/Auth/Login';
@@ -34,10 +34,12 @@ import UserNotification from './pages/User/UserNotifications';
 import UserChangePassword from './pages/User/ChangePassword';
 
 
+// import { ThemeProvider } from './contexts/ThemeContext';
+
 function App() {
   return (
     <AuthProvider>
-      {/* <WalletProvider> */}
+      <ThemeProvider>
         <SidebarProvider>
           <BrowserRouter>
             <Routes>
@@ -83,7 +85,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </SidebarProvider>
-      {/* </WalletProvider> */}
+      </ThemeProvider>
     </AuthProvider>
   );
 }

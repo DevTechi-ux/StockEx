@@ -180,7 +180,7 @@ export default function Notification() {
     };
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8 bg-gray-50 dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100">
             {/* Buttons */}
             <div className="mb-8 flex gap-3">
                 <button
@@ -198,7 +198,7 @@ export default function Notification() {
             </div>
 
             {/* Table */}
-            <div className="bg-white rounded overflow-x-auto mb-6">
+            <div className="bg-white dark:bg-gray-800 rounded overflow-x-auto mb-6">
                 <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-blue-600 text-white">
@@ -212,7 +212,7 @@ export default function Notification() {
                     </thead>
                     <tbody>
                         {paginatedLogs.map((log) => (
-                            <tr key={log.id} className="border-b hover:bg-gray-50">
+                            <tr key={log.id} className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                                 <td className="px-4 py-3">{log.id}</td>
                                 <td className="px-4 py-3">{log.email}</td>
                                 <td className="px-4 py-3">{log.description}</td>
@@ -237,14 +237,14 @@ export default function Notification() {
                 <button
                     onClick={() => setCurrentPage(1)}
                     disabled={currentPage === 1}
-                    className="px-3 py-2 text-gray-600 disabled:text-gray-300 hover:text-blue-600 font-semibold"
+                    className="px-3 py-2 text-gray-600 dark:text-gray-400 disabled:text-gray-400 dark:disabled:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 font-semibold"
                 >
                     First
                 </button>
                 <button
                     onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
-                    className="px-3 py-2 text-gray-600 disabled:text-gray-300 hover:text-blue-600 font-semibold"
+                    className="px-3 py-2 text-gray-600 dark:text-gray-400 disabled:text-gray-400 dark:disabled:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 font-semibold"
                 >
                     Previous
                 </button>
@@ -256,7 +256,7 @@ export default function Notification() {
                         className={`px-3 py-2 rounded font-semibold ${
                             currentPage === page
                                 ? 'bg-blue-600 text-white'
-                                : 'text-gray-600 hover:text-blue-600'
+                                : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
                         }`}
                     >
                         {page}
@@ -266,14 +266,14 @@ export default function Notification() {
                 <button
                     onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-2 text-blue-600 disabled:text-gray-300 hover:text-blue-700 font-semibold"
+                    className="px-3 py-2 text-blue-600 dark:text-blue-400 disabled:text-gray-400 dark:disabled:text-gray-600 hover:text-blue-700 dark:hover:text-blue-500 font-semibold"
                 >
                     Next
                 </button>
                 <button
                     onClick={() => setCurrentPage(totalPages)}
                     disabled={currentPage === totalPages}
-                    className="px-3 py-2 text-gray-600 disabled:text-gray-300 hover:text-blue-600 font-semibold"
+                    className="px-3 py-2 text-gray-600 dark:text-gray-400 disabled:text-gray-400 dark:disabled:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 font-semibold"
                 >
                     Last
                 </button>

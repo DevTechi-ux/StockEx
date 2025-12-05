@@ -109,106 +109,6 @@ const initialData: Script[] = [
     },
 ];
 
-const styles = {
-    container: {
-        fontFamily: "Arial, Helvetica, sans-serif",
-        padding: 20,
-        color: "#222",
-    } as React.CSSProperties,
-    headerRow: {
-        display: "flex",
-        alignItems: "center",
-        gap: 16,
-        marginBottom: 12,
-    } as React.CSSProperties,
-    title: {
-        fontWeight: 600,
-        marginRight: 12,
-    } as React.CSSProperties,
-    select: {
-        padding: "8px 10px",
-        borderRadius: 4,
-        border: "1px solid #ccc",
-        background: "#fff",
-    } as React.CSSProperties,
-    search: {
-        marginLeft: "auto",
-        padding: "8px 10px",
-        width: 320,
-        borderRadius: 4,
-        border: "1px solid #ccc",
-    } as React.CSSProperties,
-    table: {
-        width: "100%",
-        borderCollapse: "collapse",
-    } as React.CSSProperties,
-    th: {
-        textAlign: "left",
-        padding: "12px 8px",
-        background: "#4b28ff", // purple header
-        color: "#fff",
-        fontWeight: 700,
-        borderBottom: "2px solid #eee",
-        fontSize: 14,
-    } as React.CSSProperties,
-    td: {
-        padding: "12px 8px",
-        borderBottom: "1px solid #eee",
-        fontSize: 13,
-    } as React.CSSProperties,
-    symbolCell: {
-        width: 220,
-    } as React.CSSProperties,
-    greenCell: {
-        background: "#0d7d2f",
-        color: "#fff",
-        textAlign: "center" as const,
-        fontWeight: 700,
-    } as React.CSSProperties,
-    actionsContainer: {
-        display: "flex",
-        gap: 8,
-    } as React.CSSProperties,
-    button: {
-        padding: "6px 10px",
-        borderRadius: 6,
-        border: "none",
-        cursor: "pointer",
-        color: "#fff",
-        fontWeight: 700,
-    } as React.CSSProperties,
-    btnBuy: {
-        background: "#2bb673",
-    } as React.CSSProperties,
-    btnSell: {
-        background: "#e24d4d",
-    } as React.CSSProperties,
-    btnDelete: {
-        background: "#f0ad4e",
-        color: "#000",
-    } as React.CSSProperties,
-    footer: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginTop: 16,
-    } as React.CSSProperties,
-    paginationBtn: {
-        padding: "8px 12px",
-        borderRadius: 6,
-        border: "1px solid #ddd",
-        background: "#fff",
-        cursor: "pointer",
-        marginLeft: 6,
-    } as React.CSSProperties,
-    activePage: {
-        background: "#4b28ff",
-        color: "#fff",
-        borderColor: "#4b28ff",
-    } as React.CSSProperties,
-    smallMuted: { color: "#666", fontSize: 13 },
-} as const;
-
 export default function AddScript(): JSX.Element {
     const [data, setData] = useState<Script[]>(initialData);
     const [exchange, setExchange] = useState<string>("ALL");
@@ -250,9 +150,9 @@ export default function AddScript(): JSX.Element {
     }
 
     return (
-        <div style={styles.container}>
-            <div style={styles.headerRow}>
-                <div style={styles.title}>Add Scripts</div>
+        <div className="font-sans p-5 text-gray-800 dark:text-gray-200 bg-slate-100 dark:bg-gray-900">
+            <div className="flex items-center gap-4 mb-3">
+                <div className="font-semibold mr-3">Add Scripts</div>
 
                 <select
                     value={exchange}
@@ -260,7 +160,7 @@ export default function AddScript(): JSX.Element {
                         setExchange(e.target.value);
                         setPage(1);
                     }}
-                    style={styles.select}
+                    className="p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                 >
                     {exchanges.map((ex) => (
                         <option key={ex} value={ex}>
@@ -276,50 +176,50 @@ export default function AddScript(): JSX.Element {
                         setQuery(e.target.value);
                         setPage(1);
                     }}
-                    style={styles.search}
+                    className="ml-auto p-2 w-80 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-800"
                 />
             </div>
 
-            <table style={styles.table}>
+            <table className="w-full border-collapse">
                 <thead>
                     <tr>
-                        <th style={{ ...styles.th, ...styles.symbolCell }}>Symbol</th>
-                        <th style={styles.th}>LTP</th>
-                        <th style={styles.th}>%</th>
-                        <th style={styles.th}>BidQty</th>
-                        <th style={styles.th}>Bid</th>
-                        <th style={styles.th}>Ask</th>
-                        <th style={styles.th}>AskQty</th>
-                        <th style={styles.th}>Open</th>
-                        <th style={styles.th}>High</th>
-                        <th style={styles.th}>Low</th>
-                        <th style={styles.th}>Close</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm w-56">Symbol</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">LTP</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">%</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">BidQty</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">Bid</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">Ask</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">AskQty</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">Open</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">High</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">Low</th>
+                        <th className="text-left p-3 bg-purple-600 text-white font-bold border-b-2 border-gray-200 dark:border-gray-700 text-sm">Close</th>
                     </tr>
                 </thead>
                 <tbody>
                     {pageItems.map((row) => (
                         <tr key={row.id}>
-                            <td style={{ ...styles.td, ...styles.symbolCell }}>
-                                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">
+                                <div className="flex items-center justify-between">
                                     <div>{row.symbol}</div>
-                                    <div style={styles.actionsContainer}>
+                                    <div className="flex gap-2">
                                         <button
                                             onClick={() => handleBuy(row.symbol)}
-                                            style={{ ...styles.button, ...styles.btnBuy }}
+                                            className="p-1.5 rounded border-none cursor-pointer text-white font-bold bg-green-500"
                                             title="Buy"
                                         >
                                             B
                                         </button>
                                         <button
                                             onClick={() => handleSell(row.symbol)}
-                                            style={{ ...styles.button, ...styles.btnSell }}
+                                            className="p-1.5 rounded border-none cursor-pointer text-white font-bold bg-red-500"
                                             title="Sell"
                                         >
                                             S
                                         </button>
                                         <button
                                             onClick={() => handleDelete(row.id)}
-                                            style={{ ...styles.button, ...styles.btnDelete }}
+                                            className="p-1.5 rounded border-none cursor-pointer text-black font-bold bg-yellow-400"
                                             title="Remove"
                                         >
                                             🗑
@@ -328,22 +228,22 @@ export default function AddScript(): JSX.Element {
                                 </div>
                             </td>
 
-                            <td style={{ ...styles.td, ...styles.greenCell }}>{row.ltp}</td>
-                            <td style={styles.td}>{row.changePct}%</td>
-                            <td style={styles.td}>{row.bidQty}</td>
-                            <td style={{ ...styles.td, ...styles.greenCell }}>{row.bid}</td>
-                            <td style={{ ...styles.td, ...styles.greenCell }}>{row.ask}</td>
-                            <td style={styles.td}>{row.askQty}</td>
-                            <td style={styles.td}>{row.open}</td>
-                            <td style={styles.td}>{row.high}</td>
-                            <td style={styles.td}>{row.low}</td>
-                            <td style={styles.td}>{row.close}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs bg-green-600 text-white text-center font-bold">{row.ltp}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">{row.changePct}%</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">{row.bidQty}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs bg-green-600 text-white text-center font-bold">{row.bid}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs bg-green-600 text-white text-center font-bold">{row.ask}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">{row.askQty}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">{row.open}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">{row.high}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">{row.low}</td>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs">{row.close}</td>
                         </tr>
                     ))}
 
                     {pageItems.length === 0 && (
                         <tr>
-                            <td style={styles.td} colSpan={11}>
+                            <td className="p-3 border-b border-gray-200 dark:border-gray-700 text-xs" colSpan={11}>
                                 No scripts found.
                             </td>
                         </tr>
@@ -351,15 +251,15 @@ export default function AddScript(): JSX.Element {
                 </tbody>
             </table>
 
-            <div style={styles.footer}>
-                <div style={styles.smallMuted}>
+            <div className="flex items-center justify-between mt-4">
+                <div className="text-gray-500 dark:text-gray-400 text-xs">
                     Showing {Math.min((currentPage - 1) * pageSize + 1, total || 0)} to{" "}
                     {Math.min(currentPage * pageSize, total)} of {total} entries
                 </div>
 
                 <div>
                     <button
-                        style={styles.paginationBtn}
+                        className="p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 cursor-pointer ml-1.5"
                         onClick={() => setPage((p) => Math.max(1, p - 1))}
                         disabled={currentPage === 1}
                     >
@@ -371,10 +271,7 @@ export default function AddScript(): JSX.Element {
                         return (
                             <button
                                 key={p}
-                                style={{
-                                    ...styles.paginationBtn,
-                                    ...(p === currentPage ? styles.activePage : {}),
-                                }}
+                                className={`p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 cursor-pointer ml-1.5 ${p === currentPage ? 'bg-purple-600 text-white border-purple-600' : ''}`}
                                 onClick={() => setPage(p)}
                             >
                                 {p}
@@ -383,7 +280,7 @@ export default function AddScript(): JSX.Element {
                     })}
 
                     <button
-                        style={styles.paginationBtn}
+                        className="p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 cursor-pointer ml-1.5"
                         onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                         disabled={currentPage === totalPages}
                     >

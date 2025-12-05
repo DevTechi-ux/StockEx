@@ -10,7 +10,7 @@ export default function TransactionReport() {
     const netLoss = -5251.62;
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8  min-h-screen">
             {/* Summary Cards */}
             <div className="grid grid-cols-4 gap-6 mb-8">
                 <div className="bg-white p-6 rounded shadow">
@@ -62,7 +62,7 @@ export default function TransactionReport() {
             </div>
 
             {/* Table */}
-            <div className="bg-white rounded overflow-x-auto mb-6">
+            <div className="    rounded overflow-x-auto mb-6">
                 <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-blue-600 text-white">

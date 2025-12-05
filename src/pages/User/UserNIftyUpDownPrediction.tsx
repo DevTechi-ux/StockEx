@@ -33,10 +33,10 @@ export default function NiftyUpDowsPrediction(): JSX.Element {
 
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8 bg-gray-50 dark:bg-gray-900 min-h-screen">
             {/* Wallet Balance Display */}
             <div className="flex justify-end mb-6">
-                <div className="bg-purple-600 text-white px-6 py-2 rounded font-semibold">
+                <div className="bg-purple-600 dark:bg-purple-700 text-white px-6 py-2 rounded font-semibold">
                     Wallet Balance: ₹{walletBalance.toFixed(2)}
                 </div>
             </div>
@@ -46,11 +46,11 @@ export default function NiftyUpDowsPrediction(): JSX.Element {
                 <div className="flex gap-6 items-end flex-wrap">
                     {/* Trade Type */}
                     <div>
-                        <label className="block text-sm font-semibold mb-2">Trade Type</label>
+                        <label className="block text-sm dark:text-gray-300 font-semibold mb-2">Trade Type</label>
                         <select
                             value={tradeType}
                             onChange={(e) => setTradeType(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 rounded flex items-center gap-2"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded flex items-center gap-2 dark:bg-gray-800 dark:text-white"
                         >
                             <option value="UP">📈 UP</option>
                             <option value="DOWN">📉 DOWN</option>
@@ -59,39 +59,39 @@ export default function NiftyUpDowsPrediction(): JSX.Element {
 
                     {/* Last Price */}
                     <div>
-                        <label className="block text-sm font-semibold mb-2">Last Price</label>
-                        <div className="px-4 py-2 bg-gray-200 rounded text-gray-700 font-medium">
+                        <label className="block text-sm dark:text-gray-300 font-semibold mb-2">Last Price</label>
+                        <div className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded text-gray-700 dark:text-gray-200 font-medium">
                             {lastPrice}
                         </div>
                     </div>
 
                     {/* Amount */}
                     <div>
-                        <label className="block text-sm font-semibold mb-2">Amount</label>
+                        <label className="block text-sm dark:text-gray-300 font-semibold mb-2">Amount</label>
                         <input
                             type="number"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="Enter amount (min 300, step 30)"
-                            className="px-4 py-2 border border-gray-300 rounded w-48"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded w-48 dark:bg-gray-800 dark:text-white"
                         />
                     </div>
 
                     {/* Scheduled Time */}
                     <div>
-                        <label className="block text-sm font-semibold mb-2">Scheduled Time</label>
+                        <label className="block text-sm dark:text-gray-300 font-semibold mb-2">Scheduled Time</label>
                         <input
                             type="datetime-local"
                             value={scheduledTime}
                             onChange={(e) => setScheduledTime(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 rounded w-48"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded w-48 dark:bg-gray-800 dark:text-white"
                         />
                     </div>
 
                     {/* Book Trade Button */}
                     <button
                         onClick={handleBookTrade}
-                        className="px-6 py-2 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500 flex items-center gap-2"
+                        className="px-6 py-2 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500 dark:bg-yellow-500 dark:hover:bg-yellow-600 flex items-center gap-2"
                     >
                         📖 Book Trade
                     </button>

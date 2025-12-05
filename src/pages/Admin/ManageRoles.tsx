@@ -90,17 +90,17 @@ export default function ManageRoles() {
 
     if (currentView === 'setRules') {
         return (
-            <div className="p-8 bg-gray-50 min-h-screen">
-                <h1 className="text-2xl font-bold mb-8">Set Rules</h1>
+            <div className="p-8 bg-gray-50 dark:bg-gray-900 min-h-screen">
+                <h1 className="text-2xl font-bold mb-8 dark:text-gray-100">Set Rules</h1>
 
                 {/* Dropdowns */}
                 <div className="flex gap-6 mb-8">
                     <div className="flex-1">
-                        <label className="block text-sm font-semibold mb-2">Select Role</label>
+                        <label className="block text-sm font-semibold mb-2 dark:text-gray-300">Select Role</label>
                         <select
                             value={selectedRole}
                             onChange={(e) => setSelectedRole(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-300 rounded"
+                            className="w-full px-4 py-2 border border-gray-300 rounded dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100"
                         >
                             <option value="">-Select Role-</option>
                             <option value="admin">Admin</option>
@@ -111,11 +111,11 @@ export default function ManageRoles() {
                         </select>
                     </div>
                     <div className="flex-1">
-                        <label className="block text-sm font-semibold mb-2">Select Company</label>
+                        <label className="block text-sm font-semibold mb-2 dark:text-gray-300">Select Company</label>
                         <select
                             value={selectedCompany}
                             onChange={(e) => setSelectedCompany(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-300 rounded"
+                            className="w-full px-4 py-2 border border-gray-300 rounded dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100"
                         >
                             <option value="">-Select Company-</option>
                             <option value="uatStockex">UAT Stockex</option>
@@ -125,7 +125,7 @@ export default function ManageRoles() {
                 </div>
 
                 {/* Permissions Checkboxes */}
-                <div className="bg-white p-6 rounded mb-8">
+                <div className="p-6 rounded mb-8">
                     <div className="mb-6">
                         <label className="flex items-center gap-3 mb-4 cursor-pointer">
                             <input
@@ -134,7 +134,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('checkAll')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="font-semibold text-gray-700">Check All</span>
+                            <span className="font-semibold text-gray-400 dark:text-gray-500">Check All</span>
                         </label>
                     </div>
 
@@ -146,7 +146,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('dashboard')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Dashboard</span>
+                            <span className="text-gray-700 dark:text-gray-300">Dashboard</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -156,7 +156,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('manageTransactions')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Manage Transactions</span>
+                            <span className="text-gray-700 dark:text-gray-300">Manage Transactions</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -166,7 +166,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('fundRequest')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Fund Request</span>
+                            <span className="text-gray-700 dark:text-gray-300">Fund Request</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -176,7 +176,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('fund')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Fund</span>
+                            <span className="text-gray-700 dark:text-gray-300">Fund</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -186,7 +186,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('niftyUpdownPrediction')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Nifty Up/down Prediction</span>
+                            <span className="text-gray-700 dark:text-gray-300">Nifty Up/down Prediction</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -196,7 +196,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('niftyUpdownAdmin')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Nifty Up/down Admin</span>
+                            <span className="text-gray-700 dark:text-gray-300">Nifty Up/down Admin</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -206,7 +206,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('trade')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Trade</span>
+                            <span className="text-gray-700 dark:text-gray-300">Trade</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -216,7 +216,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('systemAdmin')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">System Admin</span>
+                            <span className="text-gray-700 dark:text-gray-300">System Admin</span>
                         </label>
 
                         <div className="ml-8 space-y-2">
@@ -227,7 +227,7 @@ export default function ManageRoles() {
                                     onChange={() => handlePermissionChange('manageRisk')}
                                     className="w-4 h-4 rounded"
                                 />
-                                <span className="text-gray-700">Manage Risk</span>
+                                <span className="text-gray-700 dark:text-gray-300">Manage Risk</span>
                             </label>
 
                             <label className="flex items-center gap-3 cursor-pointer">
@@ -237,7 +237,7 @@ export default function ManageRoles() {
                                     onChange={() => handlePermissionChange('manageRoles')}
                                     className="w-4 h-4 rounded"
                                 />
-                                <span className="text-gray-700">Manage Roles</span>
+                                <span className="text-gray-700 dark:text-gray-300">Manage Roles</span>
                             </label>
 
                             <label className="flex items-center gap-3 cursor-pointer">
@@ -247,7 +247,7 @@ export default function ManageRoles() {
                                     onChange={() => handlePermissionChange('manageUsers')}
                                     className="w-4 h-4 rounded"
                                 />
-                                <span className="text-gray-700">Manage Users</span>
+                                <span className="text-gray-700 dark:text-gray-300">Manage Users</span>
                             </label>
                         </div>
 
@@ -258,7 +258,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('transactionReport')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Transaction Report</span>
+                            <span className="text-gray-700 dark:text-gray-300">Transaction Report</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -268,7 +268,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('subscriptionPin')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Subscription Pin</span>
+                            <span className="text-gray-700 dark:text-gray-300">Subscription Pin</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -278,7 +278,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('ledgerBalance')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Ledger Balance</span>
+                            <span className="text-gray-700 dark:text-gray-300">Ledger Balance</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -288,7 +288,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('banScript')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">BanScript</span>
+                            <span className="text-gray-700 dark:text-gray-300">BanScript</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -298,7 +298,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('downloadReport')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Download Report</span>
+                            <span className="text-gray-700 dark:text-gray-300">Download Report</span>
                         </label>
 
                         <label className="flex items-center gap-3 cursor-pointer">
@@ -308,7 +308,7 @@ export default function ManageRoles() {
                                 onChange={() => handlePermissionChange('manualActiveTrade')}
                                 className="w-4 h-4 rounded"
                             />
-                            <span className="text-gray-700">Manual Active Trade</span>
+                            <span className="text-gray-700 dark:text-gray-300">Manual Active Trade</span>
                         </label>
                     </div>
                 </div>
@@ -330,7 +330,7 @@ export default function ManageRoles() {
     }
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8 bg-gray-50 dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100">
             {/* Add Role Button */}
             <div className="flex justify-between items-center mb-6">
                 <div />
@@ -345,19 +345,19 @@ export default function ManageRoles() {
             {/* Search */}
             <div className="flex justify-end mb-6">
                 <div className="flex items-center gap-3">
-                    <label className="font-semibold">Search:</label>
+                    <label className="font-semibold dark:text-gray-300">Search:</label>
                     <input
                         type="text"
                         placeholder="Search..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="px-4 py-2 border border-gray-300 rounded w-64"
+                        className="px-4 py-2 border border-gray-300 rounded w-64 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100"
                     />
                 </div>
             </div>
 
             {/* Table */}
-            <div className="bg-white rounded overflow-x-auto mb-6">
+            <div className="bg-white dark:bg-gray-800 rounded overflow-x-auto mb-6">
                 <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-blue-600 text-white">
@@ -369,19 +369,19 @@ export default function ManageRoles() {
                     </thead>
                     <tbody>
                         {roles.map((role, index) => (
-                            <tr key={index} className="border-b hover:bg-gray-50">
+                            <tr key={index} className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                                 <td className="px-6 py-3 text-center">{role.slNo}</td>
                                 <td className="px-6 py-3">{role.companyName}</td>
                                 <td className="px-6 py-3">{role.roleName}</td>
                                 <td className="px-6 py-3 flex gap-3">
                                     <button
                                         onClick={() => setCurrentView('setRules')}
-                                        className="text-blue-600 hover:text-blue-800"
+                                        className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500"
                                         title="Edit"
                                     >
                                         <Edit size={18} />
                                     </button>
-                                    <button className="text-red-600 hover:text-red-800" title="Delete">
+                                    <button className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-500" title="Delete">
                                         <Trash2 size={18} />
                                     </button>
                                 </td>
@@ -393,17 +393,17 @@ export default function ManageRoles() {
 
             {/* Pagination Info */}
             <div className="flex justify-between items-center">
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-gray-600 dark:text-gray-400">
                     Showing 1 to 1 of {roles.length} entries
                 </div>
                 <div className="flex gap-2">
-                    <button className="px-4 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-100 disabled:opacity-50">
+                    <button className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50">
                         Previous
                     </button>
                     <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 font-semibold">
                         1
                     </button>
-                    <button className="px-4 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-100 disabled:opacity-50">
+                    <button className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50">
                         Next
                     </button>
                 </div>

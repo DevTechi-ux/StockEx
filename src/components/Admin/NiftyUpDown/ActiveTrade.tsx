@@ -9,14 +9,14 @@ return (
     <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl">📊</span>
-                    <h2 className="text-lg font-semibold">Active Trades</h2>
+                    <h2 className="text-lg font-semibold dark:text-gray-200">Active Trades</h2>
                 </div>
 
                 <div className="flex justify-between items-center mb-4">
                     <div className="flex gap-4">
                         <div>
-                            <label className="block text-sm font-semibold mb-2">Show</label>
-                            <select className="px-3 py-2 border border-gray-300 rounded">
+                            <label className="block text-sm font-semibold mb-2 dark:text-gray-300">Show</label>
+                            <select className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-800 dark:text-white">
                                 <option>10</option>
                                 <option>25</option>
                                 <option>50</option>
@@ -24,24 +24,24 @@ return (
                             </select>
                         </div>
                         <div className="flex items-end">
-                            <span className="text-sm text-gray-600">entries</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-400">entries</span>
                         </div>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-semibold mb-2">Search:</label>
+                        <label className="block text-sm font-semibold mb-2 dark:text-gray-300">Search:</label>
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="px-4 py-2 border border-gray-300 rounded w-48"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded w-48 dark:bg-gray-800 dark:text-white"
                         />
                     </div>
                 </div>
 
                 {/* Table */}
-                <div className="overflow-x-auto bg-white rounded">
+                <div className="overflow-x-auto rounded">
                     <table className="w-full">
-                        <thead className="bg-gray-800 text-white">
+                        <thead className="bg-gray-800 dark:bg-gray-700 text-white">
                             <tr>
                                 <th className="px-4 py-3 text-left">ID</th>
                                 <th className="px-4 py-3 text-left">Type</th>
@@ -55,25 +55,25 @@ return (
                         <tbody>
                             {activeTrades.length === 0 ? (
                                 <tr>
-                                    <td colSpan={7} className="px-4 py-6 text-center text-gray-500">
+                                    <td colSpan={7} className="px-4 py-6 text-center text-gray-500 dark:text-gray-400">
                                         No data available in table
                                     </td>
                                 </tr>
                             ) : (
                                 activeTrades.map((trade) => (
-                                    <tr key={trade.id} className="border-b hover:bg-gray-50">
-                                        <td className="px-4 py-3">{trade.id.slice(-6)}</td>
-                                        <td className="px-4 py-3 font-semibold text-blue-600">{trade.type}</td>
-                                        <td className="px-4 py-3">₹{trade.amount}</td>
-                                        <td className="hidden md:table-cell px-4 py-3">₹{trade.price}</td>
+                                    <tr key={trade.id} className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                                        <td className="px-4 py-3 dark:text-gray-300">{trade.id.slice(-6)}</td>
+                                        <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{trade.type}</td>
+                                        <td className="px-4 py-3 dark:text-gray-300">₹{trade.amount}</td>
+                                        <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">₹{trade.price}</td>
                                         <td className="px-4 py-3">
-                                            <span className="px-3 py-1 bg-green-100 text-green-700 rounded text-sm font-semibold">
+                                            <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded text-sm font-semibold">
                                                 {trade.status}
                                             </span>
                                         </td>
-                                        <td className="hidden md:table-cell px-4 py-3">{trade.time}</td>
+                                        <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.time}</td>
                                         <td className="px-4 py-3">
-                                            <button className="px-3 py-1 bg-red-500 text-white rounded text-sm hover:bg-red-600">
+                                            <button className="px-3 py-1 bg-red-500 dark:bg-red-600 text-white rounded text-sm hover:bg-red-600 dark:hover:bg-red-700">
                                                 Close
                                             </button>
                                         </td>
@@ -84,11 +84,11 @@ return (
                     </table>
                 </div>
 
-                <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
+                <div className="flex justify-between items-center mt-4 text-sm text-gray-600 dark:text-gray-400">
                     <div>Showing 0 to 0 of {activeTrades.length} entries</div>
                     <div className="flex gap-2">
-                        <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">Previous</button>
-                        <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">Next</button>
+                        <button className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700">Previous</button>
+                        <button className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700">Next</button>
                     </div>
                 </div>
             </div>

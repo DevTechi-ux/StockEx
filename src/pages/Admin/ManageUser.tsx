@@ -71,7 +71,7 @@ export default function ManageUser() {
     if (currentView === 'addBulk') {
         return (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div className="bg-white rounded-lg p-8 max-w-md w-full">
+                <div className=" rounded-lg p-8 max-w-md w-full">
                     <div className="flex justify-between items-center mb-6">
                         <h2 className="text-xl font-bold">Add Bulk</h2>
                         <button
@@ -132,7 +132,7 @@ export default function ManageUser() {
     }
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8  min-h-screen">
             {/* Header with Buttons */}
             <div className="flex justify-between items-center mb-6">
                 <select
@@ -162,7 +162,7 @@ export default function ManageUser() {
             </div>
 
             {/* Table */}
-            <div className="bg-white rounded overflow-x-auto">
+            <div className=" rounded overflow-x-auto">
                 <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-blue-600 text-white">
@@ -181,7 +181,7 @@ export default function ManageUser() {
                     </thead>
                     <tbody>
                         {users.map((user) => (
-                            <tr key={user.id} className="border-b hover:bg-gray-50">
+                            <tr key={user.id} className="border-b ">
                                 <td className="px-4 py-3">{user.created}</td>
                                 <td className="px-4 py-3 font-semibold">{user.userName}</td>
                                 <td className="px-4 py-3">{user.sponsorId}</td>

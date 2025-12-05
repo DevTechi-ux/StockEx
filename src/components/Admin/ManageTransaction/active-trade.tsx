@@ -186,8 +186,9 @@ export function ActiveTradesTable() {
   const [pendingOrders, setPendingOrders] = useState(false)
 
   return (
-    <div className="w-full bg-slate-100">
-      <div className="max-w-6xl mx-auto py-4 overflow-x-hidden">
+    <div className="w-full p-6 rounded-lg shadow-md">
+<div className="max-w-6xl mx-auto py-4 overflow-x-hidden">
+      {/* <div className="w-full py-4"> */}
         <div id="active-trades" className="border-t-4 border-purple-500 pt-4">
           {/* Header */}
           <div className="mb-4">
@@ -236,7 +237,7 @@ export function ActiveTradesTable() {
               </thead>
               <tbody>
                 {tradesData.map((trade) => (
-                  <tr key={trade.id} className="border-b border-gray-200 hover:bg-gray-50">
+                  <tr key={trade.id} className="border-b border-gray-200">
                     {/* Square Off Button */}
                     <td className="px-3 py-3 text-center">
                       <button className="bg-orange-500 hover:bg-orange-600 text-white text-xs px-3 py-1.5 rounded">

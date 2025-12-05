@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { LogOut, User, Menu, Clock } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSidebar } from "../../contexts/SidebarContext";
+import { ThemeSwitcher } from "../ThemeSwitcher";
+
 
 const Navbar: React.FC = () => {
   const { user, logout } = useAuth();
@@ -31,7 +33,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-gray-200 to-gray-100 shadow-md border-b">
+    <nav className="bg-gradient-to-r from-gray-200 to-gray-100 shadow-md border-b dark:from-gray-800 dark:to-gray-700 dark:border-gray-600">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
@@ -39,7 +41,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={toggleCollapsed}
-              className="p-2 hover:bg-gray-300 rounded-lg text-gray-700 transition"
+              className="p-2 hover:bg-gray-300 rounded-lg text-gray-700 transition dark:text-gray-200 dark:hover:bg-gray-600"
               title="Toggle Sidebar"
             >
               <Menu className="w-6 h-6" />
@@ -53,20 +55,22 @@ const Navbar: React.FC = () => {
           {/* Right Section */}
           <div className="flex items-center gap-5">
             {(user?.role === "admin" || user?.role === "user") && (
-              <div className="flex items-center gap-2 text-gray-700">
+              <div className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
                 <Clock className="w-5 h-5" />
                 <span className="font-mono font-semibold text-lg">{currentTime}</span>
               </div>
             )}
             
-            <div className="flex items-center gap-2 text-gray-700">
+            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
               <User className="w-5 h-5" />
               <span>{user?.name}</span>
             </div>
 
+            <ThemeSwitcher />
+
             <button
               onClick={handleLogout}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400 text-gray-800 transition"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400 text-gray-800 transition dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-200"
             >
               <LogOut className="w-5 h-5" />
               Logout

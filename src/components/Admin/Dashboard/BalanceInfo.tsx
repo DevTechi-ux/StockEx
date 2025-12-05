@@ -2,7 +2,7 @@ import { Monitor } from "lucide-react"
 
 export function BalanceInfo() {
   return (
-    <aside className="w-72 bg-white p-4 flex flex-col gap-4">
+    <aside className="w-72 p-4 flex flex-col gap-4">
       {/* Profile Card */}
       <div className="bg-gradient-to-br from-violet-400 to-blue-400 rounded-xl p-4 text-center text-white">
         <div className="w-20 h-20 mx-auto mb-3 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center">

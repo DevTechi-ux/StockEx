@@ -33,7 +33,7 @@ export default function NiftyUpDowsPrediction(): JSX.Element {
 
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8  min-h-screen">
             {/* Wallet Balance Display */}
             <div className="flex justify-end mb-6">
                 <div className="bg-purple-600 text-white px-6 py-2 rounded font-semibold">

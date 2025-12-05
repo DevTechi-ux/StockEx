@@ -6,20 +6,20 @@ const stats = [
   {
     value: "0",
     label: "Wallet Balance",
-    bgColor: "bg-purple-100",
-    textColor: "text-gray-800",
+    bgColor: "bg-purple-100 dark:bg-purple-900",
+    textColor: "text-gray-800 dark:text-gray-200",
   },
   {
     value: "0",
     label: "Active Trade",
-    bgColor: "bg-green-300",
-    textColor: "text-gray-800",
+    bgColor: "bg-green-300 dark:bg-green-800",
+    textColor: "text-gray-800 dark:text-gray-200",
   },
   {
     value: "0",
     label: "Completed Trade",
-    bgColor: "bg-gray-200",
-    textColor: "text-gray-800",
+    bgColor: "bg-gray-200 dark:bg-gray-700",
+    textColor: "text-gray-800 dark:text-gray-200",
   },
 ]
 
@@ -48,10 +48,10 @@ export function ActiveTradeListCards() {
         {stats.map((stat, index) => (
           <div key={index} className={`${stat.bgColor} rounded-lg p-4 ${stat.textColor}`}>
             <p className="text-3xl font-bold">{stat.value}</p>
-            <p className="text-sm text-gray-600">{stat.label}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</p>
             <button
               onClick={() => handleViewDetails(stat.label)}
-              className="flex items-center gap-1 text-blue-600 text-sm mt-2 hover:underline"
+              className="flex items-center gap-1 text-blue-600 dark:text-blue-400 text-sm mt-2 hover:underline"
             >
               View Details <ArrowRight className="w-4 h-4" />
             </button>
@@ -61,10 +61,10 @@ export function ActiveTradeListCards() {
 
       {/* Completed Trades Modal */}
       {showCompletedModal && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 pt-10">
-          <div className="bg-white w-full max-w-5xl rounded shadow-lg overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 dark:bg-black/60 pt-10">
+          <div className="bg-white dark:bg-gray-800 w-full max-w-5xl rounded shadow-lg overflow-hidden">
             {/* Header */}
-            <div className="flex items-center justify-between bg-sky-700 text-white px-4 py-3">
+            <div className="flex items-center justify-between bg-sky-700 dark:bg-sky-800 text-white px-4 py-3">
               <h2 className="font-semibold">Completed Trades</h2>
             </div>
 
@@ -73,10 +73,10 @@ export function ActiveTradeListCards() {
               {/* Search */}
               <div className="flex justify-end mb-3">
                 <div className="flex items-center gap-2 text-sm">
-                  <span>Search:</span>
+                  <span className="dark:text-gray-300">Search:</span>
                   <input
                     type="text"
-                    className="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 dark:focus:ring-blue-400 dark:bg-gray-700 dark:text-white"
                     placeholder="Search..."
                   />
                 </div>
@@ -84,24 +84,24 @@ export function ActiveTradeListCards() {
 
               {/* Table */}
               <div className="overflow-x-auto">
-                <table className="min-w-max w-full border text-sm">
-                  <thead className="bg-gray-100">
+                <table className="min-w-max w-full border dark:border-gray-700 text-sm">
+                  <thead className="bg-gray-100 dark:bg-gray-700">
                     <tr>
-                      <th className="border px-3 py-2 text-left">Id</th>
-                      <th className="border px-3 py-2 text-left">UserName</th>
-                      <th className="border px-3 py-2 text-left">TradeSymbol</th>
-                      <th className="border px-3 py-2 text-left">Lot/Qty</th>
-                      <th className="border px-3 py-2 text-left">Unit</th>
-                      <th className="border px-3 py-2 text-left">P&amp;L</th>
-                      <th className="border px-3 py-2 text-left">Entrytime</th>
-                      <th className="border px-3 py-2 text-left">position</th>
-                      <th className="border px-3 py-2 text-left">Status</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">Id</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">UserName</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">TradeSymbol</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">Lot/Qty</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">Unit</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">P&amp;L</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">Entrytime</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">position</th>
+                      <th className="border dark:border-gray-600 px-3 py-2 text-left">Status</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td
-                        className="border px-3 py-6 text-center text-gray-500"
+                        className="border dark:border-gray-600 px-3 py-6 text-center text-gray-500 dark:text-gray-400"
                         colSpan={9}
                       >
                         No data available in table
@@ -113,10 +113,10 @@ export function ActiveTradeListCards() {
             </div>
 
             {/* Footer */}
-            <div className="flex justify-end px-4 py-3 bg-gray-50">
+            <div className="flex justify-end px-4 py-3 bg-gray-50 dark:bg-gray-700">
               <button
                 onClick={() => setShowCompletedModal(false)}
-                className="px-4 py-2 rounded bg-sky-600 text-white hover:bg-sky-700 text-sm"
+                className="px-4 py-2 rounded bg-sky-600 text-white hover:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 text-sm"
               >
                 Close
               </button>

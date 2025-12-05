@@ -8,14 +8,14 @@ const ActiveTrades: React.FC = () => {
     };
 
     return (
-        // <div className="bg-slate-100">
+        // <div className="bg-slate-100 dark:bg-gray-900">
             <div className="max-w-6xl mx-auto py-4 overflow-x-hidden">
-                <div className="p-6 bg-white rounded overflow-x-hidden">
+                <div className="p-6  rounded overflow-x-hidden">
                     <div className="flex justify-between items-center mb-6">
-                        <h2 className="text-lg font-semibold">Active Trades</h2>
+                        <h2 className="text-lg font-semibold dark:text-gray-200">Active Trades</h2>
                         <button
                             onClick={handleSquareOffAll}
-                            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 font-semibold"
+                            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800 font-semibold"
                         >
                             Sqr Off All
                         </button>
@@ -23,11 +23,11 @@ const ActiveTrades: React.FC = () => {
 
                     <div className="mb-4 flex justify-end">
                         <div>
-                            <label className="text-sm font-semibold mr-2">Search:</label>
+                            <label className="text-sm font-semibold mr-2 dark:text-gray-300">Search:</label>
                             <input
                                 type="text"
                                 placeholder="Search..."
-                                className="px-3 py-2 border border-gray-300 rounded"
+                                className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-700 dark:text-white"
                             />
                         </div>
                     </div>
@@ -36,7 +36,7 @@ const ActiveTrades: React.FC = () => {
                         <div className="inline-block min-w-full align-middle">
                             <table className="min-w-full w-full border-collapse">
                                 <thead>
-                                    <tr className="bg-blue-600 text-white">
+                                    <tr className="bg-blue-600 text-white dark:bg-blue-700">
                                         <th className="px-4 py-3 text-left font-semibold">Square Off</th>
                                         <th className="px-4 py-3 text-left font-semibold">Action</th>
                                         <th className="px-4 py-3 text-left font-semibold">Trade Symbol</th>
@@ -61,36 +61,36 @@ const ActiveTrades: React.FC = () => {
                                 <tbody>
                                     {trades.length === 0 ? (
                                         <tr>
-                                            <td colSpan={19} className="px-4 py-6 text-center text-gray-500">
+                                            <td colSpan={19} className="px-4 py-6 text-center text-gray-500 dark:text-gray-400">
                                                 No data available in table
                                             </td>
                                         </tr>
                                     ) : (
                                         trades.map((trade, index) => (
-                                            <tr key={index} className="border-b hover:bg-gray-50">
+                                            <tr key={index} className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                                                 <td className="px-4 py-3">
                                                     <input type="checkbox" />
                                                 </td>
                                                 <td className="px-4 py-3">
-                                                    <button className="text-blue-600 hover:underline">Edit</button>
+                                                    <button className="text-blue-600 dark:text-blue-400 hover:underline">Edit</button>
                                                 </td>
-                                                <td className="px-4 py-3">{trade.symbol}</td>
-                                                <td className="px-4 py-3">{trade.quantity}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.unit}</td>
-                                                <td className="px-4 py-3">{trade.position}</td>
-                                                <td className="px-4 py-3">{trade.orderPrice}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.triggerPrice}</td>
-                                                <td className="px-4 py-3">{trade.ltp}</td>
-                                                <td className="px-4 py-3">{trade.profitLoss}</td>
-                                                <td className="px-4 py-3">{trade.status}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.sl}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.tgt}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.orderDate}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.orderTime}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.productType}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.strategyName}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.publishName}</td>
-                                                <td className="hidden md:table-cell px-4 py-3">{trade.fundManager}</td>
+                                                <td className="px-4 py-3 dark:text-gray-300">{trade.symbol}</td>
+                                                <td className="px-4 py-3 dark:text-gray-300">{trade.quantity}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.unit}</td>
+                                                <td className="px-4 py-3 dark:text-gray-300">{trade.position}</td>
+                                                <td className="px-4 py-3 dark:text-gray-300">{trade.orderPrice}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.triggerPrice}</td>
+                                                <td className="px-4 py-3 dark:text-gray-300">{trade.ltp}</td>
+                                                <td className="px-4 py-3 dark:text-gray-300">{trade.profitLoss}</td>
+                                                <td className="px-4 py-3 dark:text-gray-300">{trade.status}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.sl}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.tgt}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.orderDate}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.orderTime}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.productType}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.strategyName}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.publishName}</td>
+                                                <td className="hidden md:table-cell px-4 py-3 dark:text-gray-300">{trade.fundManager}</td>
                                             </tr>
                                         ))
                                     )}

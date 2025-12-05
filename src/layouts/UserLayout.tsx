@@ -16,13 +16,13 @@ const UserLayout: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <Navbar />
       <div className="flex">
         <Sidebar />
         
                 <main className="flex-1 p-6">
-                  <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6 min-h-[80vh] ">
+                  <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6 min-h-[80vh] dark:bg-gray-800/70 dark:shadow-lg">
                     <Outlet />
                   </div>
                 </main>

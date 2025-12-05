@@ -47,21 +47,21 @@ export default function ManualActiveTrade() {
     };
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8 bg-gray-50 dark:bg-gray-900 min-h-screen">
             {/* Title */}
-            <h1 className="text-2xl font-bold mb-8 text-gray-800">Manual Trade</h1>
+            <h1 className="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">Manual Trade</h1>
 
             {/* Form */}
-            <div className="bg-white rounded shadow p-8">
+            <div className="bg-white dark:bg-gray-800 rounded shadow p-8">
                 {/* First Row */}
                 <div className="grid grid-cols-3 gap-6 mb-8">
                     {/* Watchlist */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Watchlist</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Watchlist</label>
                         <select
                             value={formData.watchlist}
                             onChange={(e) => handleInputChange('watchlist', e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         >
                             <option value="">-Select-</option>
                             {watchlistOptions.map((option) => (
@@ -74,11 +74,11 @@ export default function ManualActiveTrade() {
 
                     {/* Product Type */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Product Type</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Product Type</label>
                         <select
                             value={formData.productType}
                             onChange={(e) => handleInputChange('productType', e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         >
                             <option value="">-Select-</option>
                             {productTypeOptions.map((option) => (
@@ -92,11 +92,11 @@ export default function ManualActiveTrade() {
                     {/* Script */}
                     <div className="flex gap-2">
                         <div className="flex-1">
-                            <label className="block text-gray-700 font-semibold mb-2">Script</label>
+                            <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Script</label>
                             <select
                                 value={formData.script}
                                 onChange={(e) => handleInputChange('script', e.target.value)}
-                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                             >
                                 <option value="">-Select-</option>
                                 {scriptOptions.map((option) => (
@@ -116,30 +116,30 @@ export default function ManualActiveTrade() {
                 <div className="grid grid-cols-3 gap-6 mb-8">
                     {/* Select User */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Select User</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Select User</label>
                         <input
                             type="text"
                             value={formData.selectUser}
                             onChange={(e) => handleInputChange('selectUser', e.target.value)}
                             placeholder=""
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         />
                     </div>
 
                     {/* Last Price */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Last price</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Last price</label>
                         <div className="flex gap-2">
                             <input
                                 type="text"
                                 value={formData.lastPrice}
                                 onChange={(e) => handleInputChange('lastPrice', e.target.value)}
                                 placeholder=""
-                                className="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                             />
                             <button
                                 onClick={handleRefresh}
-                                className="px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-50"
+                                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                             >
                                 ↻
                             </button>
@@ -148,11 +148,11 @@ export default function ManualActiveTrade() {
 
                     {/* Position */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">position</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">position</label>
                         <select
                             value={formData.position}
                             onChange={(e) => handleInputChange('position', e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         >
                             {positionOptions.map((option) => (
                                 <option key={option} value={option}>
@@ -167,11 +167,11 @@ export default function ManualActiveTrade() {
                 <div className="grid grid-cols-3 gap-6 mb-8">
                     {/* Unit */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Unit</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Unit</label>
                         <select
                             value={formData.unit}
                             onChange={(e) => handleInputChange('unit', e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         >
                             {unitOptions.map((option) => (
                                 <option key={option} value={option}>
@@ -183,25 +183,25 @@ export default function ManualActiveTrade() {
 
                     {/* Qty */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Qty</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Qty</label>
                         <input
                             type="number"
                             value={formData.qty}
                             onChange={(e) => handleInputChange('qty', e.target.value)}
                             placeholder=""
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         />
                     </div>
 
                     {/* Entry Date */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Entry Date</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Entry Date</label>
                         <input
                             type="datetime-local"
                             value={formData.entryDate}
                             onChange={(e) => handleInputChange('entryDate', e.target.value)}
                             placeholder="dd-mm-yyyy --:-- --"
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500 dark:[color-scheme:dark]"
                         />
                     </div>
                 </div>
@@ -210,35 +210,35 @@ export default function ManualActiveTrade() {
                 <div className="grid grid-cols-3 gap-6 mb-8">
                     {/* Exit Date */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Exit Date</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Exit Date</label>
                         <input
                             type="datetime-local"
                             value={formData.exitDate}
                             onChange={(e) => handleInputChange('exitDate', e.target.value)}
                             placeholder="dd-mm-yyyy --:-- --"
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500 dark:[color-scheme:dark]"
                         />
                     </div>
 
                     {/* Entry Price */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Entry price</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Entry price</label>
                         <input
                             type="number"
                             value={formData.entryPrice}
                             onChange={(e) => handleInputChange('entryPrice', e.target.value)}
                             placeholder=""
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         />
                     </div>
 
                     {/* Order Status */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Order Status</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Order Status</label>
                         <select
                             value={formData.orderStatus}
                             onChange={(e) => handleInputChange('orderStatus', e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         >
                             {orderStatusOptions.map((option) => (
                                 <option key={option} value={option}>
@@ -253,25 +253,25 @@ export default function ManualActiveTrade() {
                 <div className="grid grid-cols-3 gap-6 mb-8">
                     {/* Exit Price */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Exit price</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Exit price</label>
                         <input
                             type="number"
                             value={formData.exitPrice}
                             onChange={(e) => handleInputChange('exitPrice', e.target.value)}
                             placeholder=""
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         />
                     </div>
 
                     {/* Profit Or Loss */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Profit Or Loss</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Profit Or Loss</label>
                         <input
                             type="number"
                             value={formData.profitOrLoss}
                             onChange={(e) => handleInputChange('profitOrLoss', e.target.value)}
                             placeholder=""
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:border-blue-500"
                         />
                     </div>
                 </div>

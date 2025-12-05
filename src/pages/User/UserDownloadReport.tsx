@@ -43,10 +43,10 @@ export default function DownloadReport() {
     };
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
-            <div className="max-w-2xl mx-auto bg-white rounded shadow p-8">
+        <div className="p-8 bg-gray-50 dark:bg-gray-900 min-h-screen">
+            <div className="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded shadow p-8">
                 {/* Header */}
-                <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Generate Your Reports</h1>
+                <h1 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Generate Your Reports</h1>
 
                 {/* Checkbox */}
                 <div className="mb-6">
@@ -57,21 +57,21 @@ export default function DownloadReport() {
                             onChange={(e) => setGetViaEmail(e.target.checked)}
                             className="w-4 h-4 rounded cursor-pointer"
                         />
-                        <span className="text-gray-700 font-semibold">Get Report Via Email And on local storage</span>
+                        <span className="text-gray-700 dark:text-gray-300 font-semibold">Get Report Via Email And on local storage</span>
                     </label>
                 </div>
 
                 {/* Select Report */}
                 <div className="mb-8">
-                    <label className="block text-gray-700 font-semibold mb-2">
-                        Select Report <span className="text-red-600">*</span>
+                    <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+                        Select Report <span className="text-red-600 dark:text-red-400">*</span>
                     </label>
                     <div className="relative" ref={dropdownRef}>
                         <div
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                            className="w-full px-4 py-2 border border-blue-400 rounded focus:outline-none focus:border-blue-500 bg-white cursor-pointer flex justify-between items-center"
+                            className="w-full px-4 py-2 border border-blue-400 dark:border-blue-600 rounded focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 bg-white dark:bg-gray-700 cursor-pointer flex justify-between items-center"
                         >
-                            <span className={selectedReport ? 'text-gray-800' : 'text-gray-600'}>
+                            <span className={selectedReport ? 'text-gray-800 dark:text-gray-200' : 'text-gray-600 dark:text-gray-400'}>
                                 {selectedReport || '-Select Report Type-'}
                             </span>
                             <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -81,8 +81,8 @@ export default function DownloadReport() {
 
                         {/* Dropdown Options Display */}
                         {isDropdownOpen && (
-                            <div className="absolute top-full left-0 right-0 mt-0 border border-gray-300 rounded bg-white shadow-lg z-10">
-                                <div className="px-4 py-2 text-gray-600 border-b">-Select Report Type-</div>
+                            <div className="absolute top-full left-0 right-0 mt-0 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 shadow-lg z-10">
+                                <div className="px-4 py-2 text-gray-600 dark:text-gray-400 border-b dark:border-gray-700">-Select Report Type-</div>
                                 {reportTypes.map((report) => (
                                     <div
                                         key={report}
@@ -90,7 +90,7 @@ export default function DownloadReport() {
                                         className={`px-4 py-2 cursor-pointer ${
                                             selectedReport === report
                                                 ? 'bg-blue-600 text-white'
-                                                : 'hover:bg-gray-50 text-gray-700'
+                                                : 'hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
                                         }`}
                                     >
                                         {report}
@@ -105,7 +105,7 @@ export default function DownloadReport() {
                 <div className="flex justify-center">
                     <button
                         onClick={handleGenerateReport}
-                        className="px-8 py-3 bg-blue-600 text-white rounded font-semibold hover:bg-blue-700 transition"
+                        className="px-8 py-3 bg-blue-600 text-white rounded font-semibold hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition"
                     >
                         Generate Report
                     </button>

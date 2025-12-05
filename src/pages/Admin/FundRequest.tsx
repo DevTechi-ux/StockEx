@@ -74,7 +74,7 @@ export default function FundRequest () {
     };
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8 min-h-screen">
             <div className="grid grid-cols-3 gap-6 mb-8">
                 <div>
                     <label className="block text-sm font-semibold mb-2">Bank Name</label>
@@ -185,7 +185,7 @@ export default function FundRequest () {
                             Ensure to confirm with the recipient before sending money
                         </div>
 
-                        <div className="overflow-x-auto bg-white rounded">
+                        <div className="overflow-x-auto rounded">
                             <table className="w-full">
                                 <thead className="bg-blue-600 text-white">
                                     <tr>
@@ -253,7 +253,7 @@ export default function FundRequest () {
                     <span>{showFundApprovalHistory ? '▼' : '▶'}</span>
                 </div>
                 {showFundApprovalHistory && (
-                    <div className="overflow-x-auto bg-white rounded">
+                    <div className="overflow-x-auto  rounded">
                         <table className="w-full">
                             <thead className="bg-purple-600 text-white">
                                 <tr>
@@ -273,7 +273,7 @@ export default function FundRequest () {
                             </thead>
                             <tbody>
                                 {approvalsHistory.map((approvalsHistory) => (
-                                    <tr key={approvalsHistory.id} className="border-b hover:bg-gray-50">
+                                    <tr key={approvalsHistory.id} className="border-b">
                                         <td className="px-4 py-3">{approvalsHistory.name}</td>
                                         <td className="px-4 py-3">{approvalsHistory.userName}</td>
                                         <td className="px-4 py-3">{approvalsHistory.phoneNumber}</td>

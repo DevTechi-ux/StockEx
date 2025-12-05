@@ -95,7 +95,7 @@ const Sidebar: React.FC = () => {
     <div
       className={`bg-gradient-to-b from-gray-200 to-gray-100 border-r shadow-md min-h-screen transition-all duration-300 ${
         isCollapsed ? "w-20" : "w-64"
-      }`}
+      } dark:from-gray-800 dark:to-gray-700 dark:border-gray-600`}
     >
       <div className="p-4">
         <div className="space-y-1">
@@ -109,11 +109,11 @@ const Sidebar: React.FC = () => {
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all ${
                     active
                       ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md"
-                      : "text-gray-700 hover:bg-gray-300"
+                      : "text-gray-700 hover:bg-gray-300 dark:text-gray-200 dark:hover:bg-gray-600"
                   }`}
                   title={label}
                 >
-                  <Icon className={`w-5 h-5 flex-shrink-0 ${active ? "text-white" : "text-gray-700"}`} />
+                  <Icon className={`w-5 h-5 flex-shrink-0 ${active ? "text-white" : "text-gray-700 dark:text-gray-200"}`} />
                   {!isCollapsed && <span>{label}</span>}
                 </Link>
                 
@@ -132,10 +132,10 @@ const Sidebar: React.FC = () => {
                       className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all ${
                         expandedMenu === "systemAdmin" || isSystemAdminActive
                           ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md"
-                          : "text-gray-700 hover:bg-gray-300"
+                          : "text-gray-700 hover:bg-gray-300 dark:text-gray-200 dark:hover:bg-gray-600"
                       }`}
                     >
-                      <Shield className={`w-5 h-5 flex-shrink-0 ${expandedMenu === "systemAdmin" || isSystemAdminActive ? "text-white" : "text-gray-700"}`} />
+                      <Shield className={`w-5 h-5 flex-shrink-0 ${expandedMenu === "systemAdmin" || isSystemAdminActive ? "text-white" : "text-gray-700 dark:text-gray-200"}`} />
                       {!isCollapsed && (
                         <>
                           <span>System Admin</span>
@@ -159,8 +159,8 @@ const Sidebar: React.FC = () => {
                               onClick={handleLinkClick}
                               className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
                                 active
-                                  ? "bg-blue-100 text-blue-600"
-                                  : "text-gray-600 hover:bg-gray-200"
+                                  ? "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-200"
+                                  : "text-gray-600 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700"
                               }`}
                             >
                               <SubIcon className="w-4 h-4" />
